@@ -1,0 +1,5 @@
+com\adoptify\service\ProtectoraService.class
+com\adoptify\ProtectoraServiceApplication.class
+com\adoptify\model\Protectora.class
+com\adoptify\repository\ProtectoraRepository.class
+com\adoptify\controller\ProtectoraController.class
