@@ -1,0 +1,5 @@
+com\adoptify\model\Adoptante.class
+com\adoptify\AdoptanteServiceApplication.class
+com\adoptify\controller\AdoptanteController.class
+com\adoptify\repository\AdoptanteRepository.class
+com\adoptify\service\AdoptanteService.class
