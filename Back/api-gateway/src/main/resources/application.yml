@@ -1,5 +1,5 @@
 server:
-  port: 8060
+  port: 7076
 
 logging:
   level:
@@ -41,13 +41,11 @@ spring:
 
 
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://eureka-sv.default.svc.cluster.local:8761/eureka/
+      defaultZone: http://eureka-sv:8761/eureka
 
 excluded-paths:
   paths:
