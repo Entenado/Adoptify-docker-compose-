@@ -1,8 +1,0 @@
-com\adoptify\dto\TokenDto$TokenDtoBuilder.class
-com\adoptify\config\AuthFilter$Config.class
-com\adoptify\config\WebClientConfig.class
-com\adoptify\ApiGatewayApplication.class
-com\adoptify\dto\RequestDto$RequestDtoBuilder.class
-com\adoptify\dto\RequestDto.class
-com\adoptify\dto\TokenDto.class
-com\adoptify\config\AuthFilter.class
