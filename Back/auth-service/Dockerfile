@@ -1,5 +1,12 @@
+# Etapa 1: Construcción del JAR
+FROM maven:3.8.5-openjdk-17 AS builder
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
+# Etapa 2: Ejecución de la aplicación
 FROM openjdk:17-jdk-slim
-ARG JAR_FILE=target/demo-0.0.1.jar
-COPY ${JAR_FILE} app_auth.jar
+WORKDIR /app
+COPY --from=builder /app/target/demo-0.0.1.jar app_auth.jar
 EXPOSE 7071
 ENTRYPOINT ["java", "-jar", "app_auth.jar"]
