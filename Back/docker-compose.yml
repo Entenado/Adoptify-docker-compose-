@@ -29,8 +29,8 @@ services:
       ports:
           - "3307:3306"
       environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_gestionmascota
       restart: always
       healthcheck:
@@ -60,8 +60,8 @@ services:
       ports:
           - "3308:3306"
       environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_auth_db
       restart: always
       healthcheck:
@@ -91,8 +91,8 @@ services:
       ports:
           - "3309:3306"
       environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_adoptante_db
       restart: always
       healthcheck:
@@ -122,8 +122,8 @@ services:
       ports:
           - "3311:3306"
       environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_protectora-service
       restart: always
       healthcheck:
