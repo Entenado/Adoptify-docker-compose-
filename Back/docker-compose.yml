@@ -6,6 +6,10 @@ services:
     mem_limit: 512m
     ports:
       - "8761:8761"
+    volumes:
+      - ./config.json:/app/config/production.json
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
     networks:
       - adoptify-network
 
@@ -14,6 +18,10 @@ services:
     mem_limit: 512m
     ports:
       - "7070:7070"
+    volumes:
+      - ./config.json:/app/config/production.json
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
     environment:
       DB_URL: jdbc:mysql://adoptapp_gestionmascota:3306/adoptapp_gestionmascota?createDatabaseifNotExist=true&serverTimezone=UTC
       DB_USERNAME: root
@@ -32,6 +40,8 @@ services:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_gestionmascota
+      volumes:
+       - ./data/mysql:/var/lib/mysql
       restart: always
       healthcheck:
           test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
@@ -125,6 +135,37 @@ services:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_PASSWORD: password
           MYSQL_DATABASE: adoptapp_protectora-service
+      restart: always
+      healthcheck:
+          test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+          timeout: 10s
+          retries: 10
+      networks:
+          - adoptify-network
+
+  contactanos:
+      build: contactanos
+      mem_limit: 512m
+      ports:
+          - "7074:7074"
+      environment:
+          DB_URL: jdbc:mysql://adoptapp_contactame:3306/adoptapp_contactame?createDatabaseifNotExist=true&serverTimezone=UTC
+          DB_USERNAME: root
+          DB_PASSWORD: password
+      restart: always
+      depends_on:
+          adoptapp_contactame:
+              condition: service_healthy
+      networks:
+          - adoptify-network
+  adoptapp_contactame:
+      image: mysql:8.0.33
+      ports:
+          - "3312:3306"
+      environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_PASSWORD: password
+          MYSQL_DATABASE: adoptapp_contactame
       restart: always
       healthcheck:
           test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
