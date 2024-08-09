@@ -1,0 +1,28 @@
+adoptify.eureka-sv.com {
+    reverse_proxy eureka-sv:8761
+}
+
+adoptify.gestionmascotas.com {
+    reverse_proxy gestionmascotas:7070
+}
+
+adoptify.api-gateway.com {
+    reverse_proxy api-gateway:7076
+}
+
+adoptify.contactanos.com{
+    reverse_proxy contactanos:7074
+}
+
+adoptify.protectora-service.com{
+    reverse_proxy protectora-service:7075
+}
+
+adoptify.auth-service.com{
+    reverse_proxy auth-service:7071
+}
+
+adoptify.adoptante-service.com{
+    reverse_proxy adoptante-service:7073
+}
+
