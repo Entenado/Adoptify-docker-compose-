@@ -1,28 +1,35 @@
-adoptify.eureka-sv.com {
+eureka-sv.adoptify.com {
     reverse_proxy eureka-sv:8761
+    tls fuciliabel@gmail.com
 }
 
-adoptify.gestionmascotas.com {
+gestionmascotas.adoptify.com {
     reverse_proxy gestionmascotas:7070
+    tls fuciliabel@gmail.com
 }
 
-adoptify.api-gateway.com {
+api-gateway.adoptify.com {
     reverse_proxy api-gateway:7076
+    tls fuciliabel@gmail.com
 }
 
-adoptify.contactanos.com{
+contactanos.adoptify.com {
     reverse_proxy contactanos:7074
+    tls fuciliabel@gmail.com
 }
 
-adoptify.protectora-service.com{
+protectora-service.adoptify.com {
     reverse_proxy protectora-service:7075
+    tls fuciliabel@gmail.com
 }
 
-adoptify.auth-service.com{
+auth-service.adoptify.com {
     reverse_proxy auth-service:7071
+    tls fuciliabel@gmail.com
 }
 
-adoptify.adoptante-service.com{
+adoptante-service.adoptify.com {
     reverse_proxy adoptante-service:7073
+    tls fuciliabel@gmail.com
 }
 
