@@ -171,20 +171,7 @@ services:
           - "7076:7076"
       networks:
           - adoptify-network
-  caddy:
-    image: caddy:latest
-    restart: unless-stopped
-    container_name: caddy
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./site:/srv
-      - ./caddy_data:/data
-      - ./caddy_config:/config
-    networks:
-      - adoptify-network
+
 
 networks:
    adoptify-network:
